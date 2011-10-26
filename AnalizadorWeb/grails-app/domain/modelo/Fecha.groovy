@@ -5,4 +5,10 @@ class Fecha {
     static constraints = {
     }
     static hasMany = [programaFecha:ProgramaFecha]
+    static mapping = {
+      version false
+    }
+    def String toString() {
+        return fecha
+    }
 }

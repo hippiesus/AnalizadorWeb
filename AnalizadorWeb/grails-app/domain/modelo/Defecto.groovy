@@ -9,4 +9,10 @@ class Defecto {
     }
     static hasMany = [programas:Programa]
     static mappedBy = [programaDefecto:'programaDefecto']
+    static mapping = {
+      version false
+    }
+    def String toString() {
+        return nombre
+    }
 }

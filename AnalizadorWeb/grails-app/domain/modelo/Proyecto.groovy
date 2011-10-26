@@ -8,4 +8,10 @@ class Proyecto {
     }
     static hasMany = [usuarioProyecto:Usuario,programas:Programa]
     static mappedBy = [usuarioProyecto:'usuarioProyecto']
+    static mapping = {
+      version false
+    }
+    def String toString() {
+        return nombre
+    }
 }

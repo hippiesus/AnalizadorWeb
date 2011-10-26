@@ -9,4 +9,10 @@ class ProgramaFecha {
     static constraints = {
     }
     static belongsTo = [Fecha,Programa]
+    static mapping = {
+      version false
+    }
+    def String toString() {
+        return programa+fecha
+    }
 }
