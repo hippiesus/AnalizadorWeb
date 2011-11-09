@@ -2,7 +2,7 @@ package modelo
 
 class Usuario {
     String nombre
-    String contraseña
+    String contrasena
     String perfil
 
     static constraints = {

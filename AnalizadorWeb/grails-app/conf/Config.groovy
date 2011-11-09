@@ -89,5 +89,5 @@ log4j = {
     warn   'org.mortbay.log'
 }
 grails.gorm.default.constraints = {
-   '*'(nullable:false, blank:false)
+   '*'(blank:false)
 }
