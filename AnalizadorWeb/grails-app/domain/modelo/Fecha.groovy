@@ -6,7 +6,7 @@ class Fecha {
     }
     static hasMany = [programaFecha:ProgramaFecha]
     static mapping = {
-      version false
+        version false
     }
     def String toString() {
         return fecha

@@ -30,10 +30,10 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="codigo"><g:message code="programa.codigo.label" default="Codigo" /></label>
+                                    <label for="nombre"><g:message code="programa.nombre.label" default="Nombre" /></label>
                                 </td>
-                                <td valign="top" class="value ${hasErrors(bean: programaInstance, field: 'codigo', 'errors')}">
-                                    <g:textField name="codigo" value="${programaInstance?.codigo}" />
+                                <td valign="top" class="value ${hasErrors(bean: programaInstance, field: 'nombre', 'errors')}">
+                                    <g:textField name="nombre" value="${programaInstance?.nombre}" />
                                 </td>
                             </tr>
                         
@@ -48,10 +48,10 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="nombre"><g:message code="programa.nombre.label" default="Nombre" /></label>
+                                    <label for="codigo"><g:message code="programa.codigo.label" default="Codigo" /></label>
                                 </td>
-                                <td valign="top" class="value ${hasErrors(bean: programaInstance, field: 'nombre', 'errors')}">
-                                    <g:textField name="nombre" value="${programaInstance?.nombre}" />
+                                <td valign="top" class="value ${hasErrors(bean: programaInstance, field: 'codigo', 'errors')}">
+                                    <g:textField name="codigo" value="${programaInstance?.codigo}" />
                                 </td>
                             </tr>
                         

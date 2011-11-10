@@ -30,6 +30,20 @@
                         </tr>
                     
                         <tr class="prop">
+                            <td valign="top" class="name"><g:message code="programa.nombre.label" default="Nombre" /></td>
+                            
+                            <td valign="top" class="value">${fieldValue(bean: programaInstance, field: "nombre")}</td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
+                            <td valign="top" class="name"><g:message code="programa.descripcion.label" default="Descripcion" /></td>
+                            
+                            <td valign="top" class="value">${fieldValue(bean: programaInstance, field: "descripcion")}</td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
                             <td valign="top" class="name"><g:message code="programa.codigo.label" default="Codigo" /></td>
                             
                             <td valign="top" class="value">${fieldValue(bean: programaInstance, field: "codigo")}</td>
@@ -46,20 +60,6 @@
                                 </g:each>
                                 </ul>
                             </td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name"><g:message code="programa.descripcion.label" default="Descripcion" /></td>
-                            
-                            <td valign="top" class="value">${fieldValue(bean: programaInstance, field: "descripcion")}</td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name"><g:message code="programa.nombre.label" default="Nombre" /></td>
-                            
-                            <td valign="top" class="value">${fieldValue(bean: programaInstance, field: "nombre")}</td>
                             
                         </tr>
                     

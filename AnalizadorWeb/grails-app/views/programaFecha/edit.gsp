@@ -42,19 +42,19 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                  <label for="cantidadDefectosCritico"><g:message code="programaFecha.cantidadDefectosCritico.label" default="Cantidad Defectos Critico" /></label>
+                                  <label for="cantidadDefectosMedio"><g:message code="programaFecha.cantidadDefectosMedio.label" default="Cantidad Defectos Medio" /></label>
                                 </td>
-                                <td valign="top" class="value ${hasErrors(bean: programaFechaInstance, field: 'cantidadDefectosCritico', 'errors')}">
-                                    <g:textField name="cantidadDefectosCritico" value="${fieldValue(bean: programaFechaInstance, field: 'cantidadDefectosCritico')}" />
+                                <td valign="top" class="value ${hasErrors(bean: programaFechaInstance, field: 'cantidadDefectosMedio', 'errors')}">
+                                    <g:textField name="cantidadDefectosMedio" value="${fieldValue(bean: programaFechaInstance, field: 'cantidadDefectosMedio')}" />
                                 </td>
                             </tr>
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                  <label for="cantidadDefectosMedio"><g:message code="programaFecha.cantidadDefectosMedio.label" default="Cantidad Defectos Medio" /></label>
+                                  <label for="cantidadDefectosCritico"><g:message code="programaFecha.cantidadDefectosCritico.label" default="Cantidad Defectos Critico" /></label>
                                 </td>
-                                <td valign="top" class="value ${hasErrors(bean: programaFechaInstance, field: 'cantidadDefectosMedio', 'errors')}">
-                                    <g:textField name="cantidadDefectosMedio" value="${fieldValue(bean: programaFechaInstance, field: 'cantidadDefectosMedio')}" />
+                                <td valign="top" class="value ${hasErrors(bean: programaFechaInstance, field: 'cantidadDefectosCritico', 'errors')}">
+                                    <g:textField name="cantidadDefectosCritico" value="${fieldValue(bean: programaFechaInstance, field: 'cantidadDefectosCritico')}" />
                                 </td>
                             </tr>
                         

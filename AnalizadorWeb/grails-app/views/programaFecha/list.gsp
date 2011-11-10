@@ -26,9 +26,9 @@
                         
                             <g:sortableColumn property="cantidadDefectosBajo" title="${message(code: 'programaFecha.cantidadDefectosBajo.label', default: 'Cantidad Defectos Bajo')}" />
                         
-                            <g:sortableColumn property="cantidadDefectosCritico" title="${message(code: 'programaFecha.cantidadDefectosCritico.label', default: 'Cantidad Defectos Critico')}" />
-                        
                             <g:sortableColumn property="cantidadDefectosMedio" title="${message(code: 'programaFecha.cantidadDefectosMedio.label', default: 'Cantidad Defectos Medio')}" />
+                        
+                            <g:sortableColumn property="cantidadDefectosCritico" title="${message(code: 'programaFecha.cantidadDefectosCritico.label', default: 'Cantidad Defectos Critico')}" />
                         
                             <th><g:message code="programaFecha.fecha.label" default="Fecha" /></th>
                         
@@ -44,9 +44,9 @@
                         
                             <td>${fieldValue(bean: programaFechaInstance, field: "cantidadDefectosBajo")}</td>
                         
-                            <td>${fieldValue(bean: programaFechaInstance, field: "cantidadDefectosCritico")}</td>
-                        
                             <td>${fieldValue(bean: programaFechaInstance, field: "cantidadDefectosMedio")}</td>
+                        
+                            <td>${fieldValue(bean: programaFechaInstance, field: "cantidadDefectosCritico")}</td>
                         
                             <td>${fieldValue(bean: programaFechaInstance, field: "fecha")}</td>
                         

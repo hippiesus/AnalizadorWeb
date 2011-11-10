@@ -37,16 +37,16 @@
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name"><g:message code="programaFecha.cantidadDefectosCritico.label" default="Cantidad Defectos Critico" /></td>
+                            <td valign="top" class="name"><g:message code="programaFecha.cantidadDefectosMedio.label" default="Cantidad Defectos Medio" /></td>
                             
-                            <td valign="top" class="value">${fieldValue(bean: programaFechaInstance, field: "cantidadDefectosCritico")}</td>
+                            <td valign="top" class="value">${fieldValue(bean: programaFechaInstance, field: "cantidadDefectosMedio")}</td>
                             
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name"><g:message code="programaFecha.cantidadDefectosMedio.label" default="Cantidad Defectos Medio" /></td>
+                            <td valign="top" class="name"><g:message code="programaFecha.cantidadDefectosCritico.label" default="Cantidad Defectos Critico" /></td>
                             
-                            <td valign="top" class="value">${fieldValue(bean: programaFechaInstance, field: "cantidadDefectosMedio")}</td>
+                            <td valign="top" class="value">${fieldValue(bean: programaFechaInstance, field: "cantidadDefectosCritico")}</td>
                             
                         </tr>
                     

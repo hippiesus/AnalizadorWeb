@@ -24,11 +24,11 @@
                         
                             <g:sortableColumn property="id" title="${message(code: 'programa.id.label', default: 'Id')}" />
                         
-                            <g:sortableColumn property="codigo" title="${message(code: 'programa.codigo.label', default: 'Codigo')}" />
+                            <g:sortableColumn property="nombre" title="${message(code: 'programa.nombre.label', default: 'Nombre')}" />
                         
                             <g:sortableColumn property="descripcion" title="${message(code: 'programa.descripcion.label', default: 'Descripcion')}" />
                         
-                            <g:sortableColumn property="nombre" title="${message(code: 'programa.nombre.label', default: 'Nombre')}" />
+                            <g:sortableColumn property="codigo" title="${message(code: 'programa.codigo.label', default: 'Codigo')}" />
                         
                             <th><g:message code="programa.proyecto.label" default="Proyecto" /></th>
                         
@@ -40,11 +40,11 @@
                         
                             <td><g:link action="show" id="${programaInstance.id}">${fieldValue(bean: programaInstance, field: "id")}</g:link></td>
                         
-                            <td>${fieldValue(bean: programaInstance, field: "codigo")}</td>
+                            <td>${fieldValue(bean: programaInstance, field: "nombre")}</td>
                         
                             <td>${fieldValue(bean: programaInstance, field: "descripcion")}</td>
                         
-                            <td>${fieldValue(bean: programaInstance, field: "nombre")}</td>
+                            <td>${fieldValue(bean: programaInstance, field: "codigo")}</td>
                         
                             <td>${fieldValue(bean: programaInstance, field: "proyecto")}</td>
                         
