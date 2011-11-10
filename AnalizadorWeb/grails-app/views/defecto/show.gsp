@@ -30,9 +30,9 @@
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name"><g:message code="defecto.clasificacion.label" default="Clasificacion" /></td>
+                            <td valign="top" class="name"><g:message code="defecto.nombre.label" default="Nombre" /></td>
                             
-                            <td valign="top" class="value">${fieldValue(bean: defectoInstance, field: "clasificacion")}</td>
+                            <td valign="top" class="value">${fieldValue(bean: defectoInstance, field: "nombre")}</td>
                             
                         </tr>
                     
@@ -44,9 +44,9 @@
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name"><g:message code="defecto.nombre.label" default="Nombre" /></td>
+                            <td valign="top" class="name"><g:message code="defecto.clasificacion.label" default="Clasificacion" /></td>
                             
-                            <td valign="top" class="value">${fieldValue(bean: defectoInstance, field: "nombre")}</td>
+                            <td valign="top" class="value">${fieldValue(bean: defectoInstance, field: "clasificacion")}</td>
                             
                         </tr>
                     

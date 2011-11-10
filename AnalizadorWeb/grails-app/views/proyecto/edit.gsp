@@ -33,19 +33,19 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                  <label for="descripcion"><g:message code="proyecto.descripcion.label" default="Descripcion" /></label>
+                                  <label for="nombre"><g:message code="proyecto.nombre.label" default="Nombre" /></label>
                                 </td>
-                                <td valign="top" class="value ${hasErrors(bean: proyectoInstance, field: 'descripcion', 'errors')}">
-                                    <g:textField name="descripcion" value="${proyectoInstance?.descripcion}" />
+                                <td valign="top" class="value ${hasErrors(bean: proyectoInstance, field: 'nombre', 'errors')}">
+                                    <g:textField name="nombre" value="${proyectoInstance?.nombre}" />
                                 </td>
                             </tr>
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                  <label for="nombre"><g:message code="proyecto.nombre.label" default="Nombre" /></label>
+                                  <label for="descripcion"><g:message code="proyecto.descripcion.label" default="Descripcion" /></label>
                                 </td>
-                                <td valign="top" class="value ${hasErrors(bean: proyectoInstance, field: 'nombre', 'errors')}">
-                                    <g:textField name="nombre" value="${proyectoInstance?.nombre}" />
+                                <td valign="top" class="value ${hasErrors(bean: proyectoInstance, field: 'descripcion', 'errors')}">
+                                    <g:textField name="descripcion" value="${proyectoInstance?.descripcion}" />
                                 </td>
                             </tr>
                         

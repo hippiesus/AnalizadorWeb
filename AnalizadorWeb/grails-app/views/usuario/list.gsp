@@ -24,9 +24,9 @@
                         
                             <g:sortableColumn property="id" title="${message(code: 'usuario.id.label', default: 'Id')}" />
                         
-                            <g:sortableColumn property="contrasena" title="${message(code: 'usuario.contrasena.label', default: 'Contrasena')}" />
-                        
                             <g:sortableColumn property="nombre" title="${message(code: 'usuario.nombre.label', default: 'Nombre')}" />
+                        
+                            <g:sortableColumn property="contrasena" title="${message(code: 'usuario.contrasena.label', default: 'Contrasena')}" />
                         
                             <g:sortableColumn property="perfil" title="${message(code: 'usuario.perfil.label', default: 'Perfil')}" />
                         
@@ -38,9 +38,9 @@
                         
                             <td><g:link action="show" id="${usuarioInstance.id}">${fieldValue(bean: usuarioInstance, field: "id")}</g:link></td>
                         
-                            <td>${fieldValue(bean: usuarioInstance, field: "contrasena")}</td>
-                        
                             <td>${fieldValue(bean: usuarioInstance, field: "nombre")}</td>
+                        
+                            <td>${fieldValue(bean: usuarioInstance, field: "contrasena")}</td>
                         
                             <td>${fieldValue(bean: usuarioInstance, field: "perfil")}</td>
                         

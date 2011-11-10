@@ -6,10 +6,13 @@ class Usuario {
     String perfil
 
     static constraints = {
+        nombre(blank:false)
+        contrasena(blank:false)
+        perfil(blank:false)
     }
     static belongsTo = [Proyecto]
     static mapping = {
-      version false
+        version false
     }
     static hasMany = [usuarioProyecto:Proyecto]
     static mappedBy = [usuarioProyecto:'usuarioProyecto']

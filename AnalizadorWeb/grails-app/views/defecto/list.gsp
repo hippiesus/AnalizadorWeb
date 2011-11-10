@@ -24,11 +24,11 @@
                         
                             <g:sortableColumn property="id" title="${message(code: 'defecto.id.label', default: 'Id')}" />
                         
-                            <g:sortableColumn property="clasificacion" title="${message(code: 'defecto.clasificacion.label', default: 'Clasificacion')}" />
+                            <g:sortableColumn property="nombre" title="${message(code: 'defecto.nombre.label', default: 'Nombre')}" />
                         
                             <g:sortableColumn property="descripcion" title="${message(code: 'defecto.descripcion.label', default: 'Descripcion')}" />
                         
-                            <g:sortableColumn property="nombre" title="${message(code: 'defecto.nombre.label', default: 'Nombre')}" />
+                            <g:sortableColumn property="clasificacion" title="${message(code: 'defecto.clasificacion.label', default: 'Clasificacion')}" />
                         
                         </tr>
                     </thead>
@@ -38,11 +38,11 @@
                         
                             <td><g:link action="show" id="${defectoInstance.id}">${fieldValue(bean: defectoInstance, field: "id")}</g:link></td>
                         
-                            <td>${fieldValue(bean: defectoInstance, field: "clasificacion")}</td>
+                            <td>${fieldValue(bean: defectoInstance, field: "nombre")}</td>
                         
                             <td>${fieldValue(bean: defectoInstance, field: "descripcion")}</td>
                         
-                            <td>${fieldValue(bean: defectoInstance, field: "nombre")}</td>
+                            <td>${fieldValue(bean: defectoInstance, field: "clasificacion")}</td>
                         
                         </tr>
                     </g:each>

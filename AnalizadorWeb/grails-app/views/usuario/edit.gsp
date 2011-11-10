@@ -33,19 +33,19 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                  <label for="contrasena"><g:message code="usuario.contrasena.label" default="Contrasena" /></label>
+                                  <label for="nombre"><g:message code="usuario.nombre.label" default="Nombre" /></label>
                                 </td>
-                                <td valign="top" class="value ${hasErrors(bean: usuarioInstance, field: 'contrasena', 'errors')}">
-                                    <g:textField name="contrasena" value="${usuarioInstance?.contrasena}" />
+                                <td valign="top" class="value ${hasErrors(bean: usuarioInstance, field: 'nombre', 'errors')}">
+                                    <g:textField name="nombre" value="${usuarioInstance?.nombre}" />
                                 </td>
                             </tr>
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                  <label for="nombre"><g:message code="usuario.nombre.label" default="Nombre" /></label>
+                                  <label for="contrasena"><g:message code="usuario.contrasena.label" default="Contrasena" /></label>
                                 </td>
-                                <td valign="top" class="value ${hasErrors(bean: usuarioInstance, field: 'nombre', 'errors')}">
-                                    <g:textField name="nombre" value="${usuarioInstance?.nombre}" />
+                                <td valign="top" class="value ${hasErrors(bean: usuarioInstance, field: 'contrasena', 'errors')}">
+                                    <g:textField name="contrasena" value="${usuarioInstance?.contrasena}" />
                                 </td>
                             </tr>
                         

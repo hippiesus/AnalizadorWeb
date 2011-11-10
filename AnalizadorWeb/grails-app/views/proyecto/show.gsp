@@ -30,16 +30,16 @@
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name"><g:message code="proyecto.descripcion.label" default="Descripcion" /></td>
+                            <td valign="top" class="name"><g:message code="proyecto.nombre.label" default="Nombre" /></td>
                             
-                            <td valign="top" class="value">${fieldValue(bean: proyectoInstance, field: "descripcion")}</td>
+                            <td valign="top" class="value">${fieldValue(bean: proyectoInstance, field: "nombre")}</td>
                             
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name"><g:message code="proyecto.nombre.label" default="Nombre" /></td>
+                            <td valign="top" class="name"><g:message code="proyecto.descripcion.label" default="Descripcion" /></td>
                             
-                            <td valign="top" class="value">${fieldValue(bean: proyectoInstance, field: "nombre")}</td>
+                            <td valign="top" class="value">${fieldValue(bean: proyectoInstance, field: "descripcion")}</td>
                             
                         </tr>
                     

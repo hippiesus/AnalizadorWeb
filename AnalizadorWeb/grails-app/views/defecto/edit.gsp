@@ -33,10 +33,10 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                  <label for="clasificacion"><g:message code="defecto.clasificacion.label" default="Clasificacion" /></label>
+                                  <label for="nombre"><g:message code="defecto.nombre.label" default="Nombre" /></label>
                                 </td>
-                                <td valign="top" class="value ${hasErrors(bean: defectoInstance, field: 'clasificacion', 'errors')}">
-                                    <g:textField name="clasificacion" value="${defectoInstance?.clasificacion}" />
+                                <td valign="top" class="value ${hasErrors(bean: defectoInstance, field: 'nombre', 'errors')}">
+                                    <g:textField name="nombre" value="${defectoInstance?.nombre}" />
                                 </td>
                             </tr>
                         
@@ -51,10 +51,10 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                  <label for="nombre"><g:message code="defecto.nombre.label" default="Nombre" /></label>
+                                  <label for="clasificacion"><g:message code="defecto.clasificacion.label" default="Clasificacion" /></label>
                                 </td>
-                                <td valign="top" class="value ${hasErrors(bean: defectoInstance, field: 'nombre', 'errors')}">
-                                    <g:textField name="nombre" value="${defectoInstance?.nombre}" />
+                                <td valign="top" class="value ${hasErrors(bean: defectoInstance, field: 'clasificacion', 'errors')}">
+                                    <g:textField name="clasificacion" value="${defectoInstance?.clasificacion}" />
                                 </td>
                             </tr>
                         
