@@ -9,7 +9,6 @@
     </head>
     <body>
         <div class="nav">
-            <span class="menuButton"><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></span>
             <span class="menuButton"><g:link class="list" action="list"><g:message code="default.list.label" args="[entityName]" /></g:link></span>
             <span class="menuButton"><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></span>
         </div>
@@ -44,9 +43,23 @@
                         </tr>
                     
                         <tr class="prop">
+                            <td valign="top" class="name"><g:message code="defecto.expresion.label" default="Expresion" /></td>
+                            
+                            <td valign="top" class="value">${fieldValue(bean: defectoInstance, field: "expresion")}</td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
+                            <td valign="top" class="name"><g:message code="defecto.coreccion.label" default="Coreccion" /></td>
+                            
+                            <td valign="top" class="value">${fieldValue(bean: defectoInstance, field: "coreccion")}</td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
                             <td valign="top" class="name"><g:message code="defecto.clasificacion.label" default="Clasificacion" /></td>
                             
-                            <td valign="top" class="value">${fieldValue(bean: defectoInstance, field: "clasificacion")}</td>
+                            <td valign="top" class="value"><g:link controller="clasificacion" action="show" id="${defectoInstance?.clasificacion?.id}">${defectoInstance?.clasificacion?.encodeAsHTML()}</g:link></td>
                             
                         </tr>
                     

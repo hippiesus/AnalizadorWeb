@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>Login Eigol</title>
+    <title>Login </title>
     <meta name="layout" content="main" />
   </head>
   <body>
@@ -17,16 +17,16 @@ ${flash.message}
         <span class='nameClear'><label for="usuario">Usuario:</label>
         </span>
         <td valign="top" class="value $ {hasErrors(bean:userInstance,field:'usuario','errors')}">
-          <input type="text" id="nombre" name="nombre" value=""/>
+          <input type="text" id="nombre" name="nombre" value=""/>    
         </td>
+        <br>
         <span class='nameClear'><label for="pasword">Password:</label>
           <td valign="top" class="value $ {hasErrors(bean:userInstance,field:'contraseña','errors')}">
-            <input type="password" id="contraseña" name="contraseña" value=""/>
+            <input type="password" id="contrasena" name="contrasena" value=""/>
           </td>
         </span>
         <div class="buttons">
-          <span class="button"><input class="save" type="submit" value="Login"
-                                      /></span>
+          <span class="button"><input class="save" type="submit" value="Login"/></span>
         </div>
       </form>
     </div>

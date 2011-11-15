@@ -9,7 +9,6 @@
     </head>
     <body>
         <div class="nav">
-            <span class="menuButton"><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></span>
             <span class="menuButton"><g:link class="list" action="list"><g:message code="default.list.label" args="[entityName]" /></g:link></span>
             <span class="menuButton"><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></span>
         </div>
@@ -46,7 +45,7 @@
                         <tr class="prop">
                             <td valign="top" class="name"><g:message code="usuario.perfil.label" default="Perfil" /></td>
                             
-                            <td valign="top" class="value">${fieldValue(bean: usuarioInstance, field: "perfil")}</td>
+                            <td valign="top" class="value"><g:link controller="perfil" action="show" id="${usuarioInstance?.perfil?.id}">${usuarioInstance?.perfil?.encodeAsHTML()}</g:link></td>
                             
                         </tr>
                     

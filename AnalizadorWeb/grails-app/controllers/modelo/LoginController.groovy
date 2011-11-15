@@ -9,12 +9,12 @@ class LoginController {
         def usuario = Usuario.findByNombreAndContrasena(params.nombre, params.contrasena)
 
         if (usuario) {
-            if (usuario.perfil=="administrador") {
-                session.nombre = administrador
+            if (usuario.perfil.nombre.equals("administrador")) {
+                session.usuario = usuario
                 redirect(controller:'proyecto')
             }
-            else if(usuario.perfil=="usuario"){
-                session.nombre= usuario
+            else if (usuario.perfil.nombre.equals("usuario")){
+                session.usuario= usuario
                 redirect(controller:'proyecto')
 
             }
@@ -26,8 +26,8 @@ class LoginController {
         }
     }
     def logout = {
-        if(session.user) {
-            session.user = null
+        if(session.usuario) {
+            session.usuario = null
             redirect(action:'login')
         }
     }
