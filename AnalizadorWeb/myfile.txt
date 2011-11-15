@@ -1,0 +1,26 @@
+Procesos iso
+
+A. El Sistema de Gestión de Servicios TI (SGSTI).
+B. Planificación e Implementación de la Gestión del Servicio.
+C. Planificación e Implementación de Servicios, Nuevos o Modificados
+D. Procesos de Provisión de Servicio.
+E. Procesos de Relaciones
+F. Procesos de Resolución
+G. Procesos de Control
+H. Procesos de Entrega
+
+Implantacion
+1. Conocer la documentación 
+2. Analizar la situación actual
+3. Programa para la mejora del servicio
+4. Seguimiento y mejora continua.
+
+Certificacion
+1.	Determinar el alcance de la certificación. 
+2.	Solicitud de certificación
+3.	Análisis de documentación.
+4.	Visita previa.
+5.	Auditoria Inicial
+6.	 Evaluación y decisión 
+8.	Auditoria de seguimiento
+9.	Auditoria de renovación
