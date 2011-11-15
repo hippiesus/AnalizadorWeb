@@ -16,14 +16,23 @@
     <img src="${resource(dir:'images',file:'spinner.gif')}" alt="${message(code:'spinner.alt',default:'Loading...')}" />
   </div>
   <div id="grailsLogo"><a href="http://grails.org"><img src="${resource(dir:'images',file:'grails_logo.png')}" alt="Grails" border="0" /></a></div>
-<%if(session.usuario){%>
+<%if(session.usuario && "administrador".equals(session.usuario.perfil.nombre)){%>
   <div class="nav" >
-
     <ul>
       <span class="menuButton"><a class="home" href="${createLink(uri: '/proyecto/list')}"><g:message code="default.home.label"/></a></span> |
-      <g:each var="c" in="${grailsApplication.domainClasses.sort { it.shortName} }">
-        <td class="controller" ><g:link controller="${c.logicalPropertyName}">${c.shortName}</g:link> | </td>
-      </g:each>
+      <span class="menuButton"><a class="controller" href="${createLink(uri: '/defecto/index')}"><g:message code="Defectos"/></a></span> |
+      <span class="menuButton"><a class="controller" href="${createLink(uri: '/perfil/index')}"><g:message code="Perfiles"/></a></span> |
+      <span class="menuButton"><a class="controller" href="${createLink(uri: '/programa/index')}"><g:message code="Programas"/></a></span> |
+      <span class="menuButton"><a class="controller" href="${createLink(uri: '/proyecto/index')}"><g:message code="Proyectos"/></a></span> |
+      <span class="menuButton"><a class="controller" href="${createLink(uri: '/usuario/index')}"><g:message code="Usuarios"/></a></span> |
+    </ul>
+  </div>
+<%}else if(session.usuario && "usuario".equals(session.usuario.perfil.nombre)){%>
+   <div class="nav" >
+    <ul>
+      <span class="menuButton"><a class="home" href="${createLink(uri: '/proyecto/list')}"><g:message code="default.home.label"/></a></span> |
+      <span class="menuButton"><a class="controller" href="${createLink(uri: '/programa/index')}"><g:message code="Programas"/></a></span> |
+      <span class="menuButton"><a class="controller" href="${createLink(uri: '/proyecto/index')}"><g:message code="Proyectos"/></a></span> |
     </ul>
   </div>
 <%}%>
