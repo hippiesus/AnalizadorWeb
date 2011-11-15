@@ -10,7 +10,6 @@
     </head>
     <body>
         <div class="nav">
-            <span class="menuButton"><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></span>
             <span class="menuButton"><g:link class="list" action="list"><g:message code="default.list.label" args="[entityName]" /></g:link></span>
         </div>
         <div class="body">
@@ -48,10 +47,35 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
+<<<<<<< HEAD
                                     <label for="clasificacion"><g:message code="defecto.clasificacion.label" default="Clasificacion" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: defectoInstance, field: 'clasificacion', 'errors')}">
                                     <g:textField name="clasificacion" value="${defectoInstance?.clasificacion}" />
+=======
+                                    <label for="expresion"><g:message code="defecto.expresion.label" default="Expresion" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: defectoInstance, field: 'expresion', 'errors')}">
+                                    <g:textField name="expresion" value="${defectoInstance?.expresion}" />
+                                </td>
+                            </tr>
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="coreccion"><g:message code="defecto.coreccion.label" default="Coreccion" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: defectoInstance, field: 'coreccion', 'errors')}">
+                                    <g:textField name="coreccion" value="${defectoInstance?.coreccion}" />
+                                </td>
+                            </tr>
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="clasificacion"><g:message code="defecto.clasificacion.label" default="Clasificacion" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: defectoInstance, field: 'clasificacion', 'errors')}">
+                                    <g:select name="clasificacion.id" from="${modelo.Clasificacion.list()}" optionKey="id" value="${defectoInstance?.clasificacion?.id}"  />
+>>>>>>> validacion
                                 </td>
                             </tr>
                         

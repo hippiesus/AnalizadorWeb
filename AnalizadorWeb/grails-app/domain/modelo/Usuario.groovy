@@ -3,14 +3,17 @@ package modelo
 class Usuario {
     String nombre
     String contrasena
-    String perfil
+    Perfil perfil
 
     static constraints = {
         nombre(blank:false)
         contrasena(blank:false)
+<<<<<<< HEAD
         perfil(blank:false)
+=======
+>>>>>>> validacion
     }
-    static belongsTo = [Proyecto]
+    static belongsTo = [Proyecto,Perfil]
     static mapping = {
         version false
     }

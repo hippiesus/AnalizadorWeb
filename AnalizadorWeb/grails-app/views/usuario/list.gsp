@@ -9,7 +9,6 @@
     </head>
     <body>
         <div class="nav">
-            <span class="menuButton"><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></span>
             <span class="menuButton"><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></span>
         </div>
         <div class="body">
@@ -28,7 +27,11 @@
                         
                             <g:sortableColumn property="contrasena" title="${message(code: 'usuario.contrasena.label', default: 'Contrasena')}" />
                         
+<<<<<<< HEAD
                             <g:sortableColumn property="perfil" title="${message(code: 'usuario.perfil.label', default: 'Perfil')}" />
+=======
+                            <th><g:message code="usuario.perfil.label" default="Perfil" /></th>
+>>>>>>> validacion
                         
                         </tr>
                     </thead>
