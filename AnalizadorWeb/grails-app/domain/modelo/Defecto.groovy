@@ -11,7 +11,12 @@ class Defecto {
         nombre(blank:false)
         descripcion(blank:false)
 <<<<<<< HEAD
+<<<<<<< HEAD
         clasificacion(blank:false)
+=======
+        expresion(blank:false)
+        coreccion(blank:false)
+>>>>>>> validacion
 =======
         expresion(blank:false)
         coreccion(blank:false)

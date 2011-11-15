@@ -48,6 +48,7 @@
                             <tr class="prop">
                                 <td valign="top" class="name">
 <<<<<<< HEAD
+<<<<<<< HEAD
                                     <label for="clasificacion"><g:message code="defecto.clasificacion.label" default="Clasificacion" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: defectoInstance, field: 'clasificacion', 'errors')}">
@@ -55,6 +56,10 @@
 =======
                                     <label for="expresion"><g:message code="defecto.expresion.label" default="Expresion" /></label>
                                 </td>
+=======
+                                    <label for="expresion"><g:message code="defecto.expresion.label" default="Expresion" /></label>
+                                </td>
+>>>>>>> validacion
                                 <td valign="top" class="value ${hasErrors(bean: defectoInstance, field: 'expresion', 'errors')}">
                                     <g:textField name="expresion" value="${defectoInstance?.expresion}" />
                                 </td>
@@ -75,6 +80,9 @@
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: defectoInstance, field: 'clasificacion', 'errors')}">
                                     <g:select name="clasificacion.id" from="${modelo.Clasificacion.list()}" optionKey="id" value="${defectoInstance?.clasificacion?.id}"  />
+<<<<<<< HEAD
+>>>>>>> validacion
+=======
 >>>>>>> validacion
                                 </td>
                             </tr>

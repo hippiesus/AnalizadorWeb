@@ -44,12 +44,17 @@
                     
                         <tr class="prop">
 <<<<<<< HEAD
+<<<<<<< HEAD
                             <td valign="top" class="name"><g:message code="defecto.clasificacion.label" default="Clasificacion" /></td>
                             
                             <td valign="top" class="value">${fieldValue(bean: defectoInstance, field: "clasificacion")}</td>
 =======
                             <td valign="top" class="name"><g:message code="defecto.expresion.label" default="Expresion" /></td>
                             
+=======
+                            <td valign="top" class="name"><g:message code="defecto.expresion.label" default="Expresion" /></td>
+                            
+>>>>>>> validacion
                             <td valign="top" class="value">${fieldValue(bean: defectoInstance, field: "expresion")}</td>
                             
                         </tr>
@@ -65,6 +70,9 @@
                             <td valign="top" class="name"><g:message code="defecto.clasificacion.label" default="Clasificacion" /></td>
                             
                             <td valign="top" class="value"><g:link controller="clasificacion" action="show" id="${defectoInstance?.clasificacion?.id}">${defectoInstance?.clasificacion?.encodeAsHTML()}</g:link></td>
+<<<<<<< HEAD
+>>>>>>> validacion
+=======
 >>>>>>> validacion
                             
                         </tr>

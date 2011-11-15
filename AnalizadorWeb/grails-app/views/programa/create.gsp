@@ -3,6 +3,7 @@
 <%@ page import="modelo.Programa" %>
 <html>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta name="layout" content="main" />
@@ -75,6 +76,8 @@
         </div>
     </body>
 =======
+=======
+>>>>>>> validacion
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="layout" content="main" />
@@ -139,5 +142,8 @@
     </g:form>
   </div>
 </body>
+<<<<<<< HEAD
+>>>>>>> validacion
+=======
 >>>>>>> validacion
 </html>

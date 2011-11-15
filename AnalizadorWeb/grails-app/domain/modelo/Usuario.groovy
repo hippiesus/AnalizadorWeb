@@ -9,7 +9,10 @@ class Usuario {
         nombre(blank:false)
         contrasena(blank:false)
 <<<<<<< HEAD
+<<<<<<< HEAD
         perfil(blank:false)
+=======
+>>>>>>> validacion
 =======
 >>>>>>> validacion
     }
