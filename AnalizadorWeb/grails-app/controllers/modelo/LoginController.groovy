@@ -20,7 +20,7 @@ class LoginController {
             }
         }
         else{
-            flash.message = "Usuario no encontrado: ${params.usuario}"
+            flash.message = "Usuario no encontrado: ${params.nombre}"
             redirect(action:'login')
             return
         }
