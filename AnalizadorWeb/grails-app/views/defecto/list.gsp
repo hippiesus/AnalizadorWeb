@@ -23,25 +23,15 @@
                         
                             <g:sortableColumn property="id" title="${message(code: 'defecto.id.label', default: 'Id')}" />
                         
-                            <g:sortableColumn property="nombre" title="${message(code: 'defecto.nombre.label', default: 'Nombre')}" />
-                        
-                            <g:sortableColumn property="descripcion" title="${message(code: 'defecto.descripcion.label', default: 'Descripcion')}" />
-                        
-<<<<<<< HEAD
-<<<<<<< HEAD
-                            <g:sortableColumn property="clasificacion" title="${message(code: 'defecto.clasificacion.label', default: 'Clasificacion')}" />
-=======
-=======
->>>>>>> validacion
-                            <g:sortableColumn property="expresion" title="${message(code: 'defecto.expresion.label', default: 'Expresion')}" />
+                            <th><g:message code="defecto.clasificacion.label" default="Clasificacion" /></th>
                         
                             <g:sortableColumn property="coreccion" title="${message(code: 'defecto.coreccion.label', default: 'Coreccion')}" />
                         
-                            <th><g:message code="defecto.clasificacion.label" default="Clasificacion" /></th>
-<<<<<<< HEAD
->>>>>>> validacion
-=======
->>>>>>> validacion
+                            <g:sortableColumn property="descripcion" title="${message(code: 'defecto.descripcion.label', default: 'Descripcion')}" />
+                        
+                            <g:sortableColumn property="expresion" title="${message(code: 'defecto.expresion.label', default: 'Expresion')}" />
+                        
+                            <g:sortableColumn property="nombre" title="${message(code: 'defecto.nombre.label', default: 'Nombre')}" />
                         
                         </tr>
                     </thead>
@@ -51,24 +41,15 @@
                         
                             <td><g:link action="show" id="${defectoInstance.id}">${fieldValue(bean: defectoInstance, field: "id")}</g:link></td>
                         
-                            <td>${fieldValue(bean: defectoInstance, field: "nombre")}</td>
-                        
-                            <td>${fieldValue(bean: defectoInstance, field: "descripcion")}</td>
-                        
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> validacion
-                            <td>${fieldValue(bean: defectoInstance, field: "expresion")}</td>
+                            <td>${fieldValue(bean: defectoInstance, field: "clasificacion")}</td>
                         
                             <td>${fieldValue(bean: defectoInstance, field: "coreccion")}</td>
                         
-<<<<<<< HEAD
->>>>>>> validacion
-=======
->>>>>>> validacion
-                            <td>${fieldValue(bean: defectoInstance, field: "clasificacion")}</td>
+                            <td>${fieldValue(bean: defectoInstance, field: "descripcion")}</td>
+                        
+                            <td>${fieldValue(bean: defectoInstance, field: "expresion")}</td>
+                        
+                            <td>${fieldValue(bean: defectoInstance, field: "nombre")}</td>
                         
                         </tr>
                     </g:each>

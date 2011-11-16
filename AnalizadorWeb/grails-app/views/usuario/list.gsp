@@ -27,15 +27,7 @@
                         
                             <g:sortableColumn property="contrasena" title="${message(code: 'usuario.contrasena.label', default: 'Contrasena')}" />
                         
-<<<<<<< HEAD
-<<<<<<< HEAD
-                            <g:sortableColumn property="perfil" title="${message(code: 'usuario.perfil.label', default: 'Perfil')}" />
-=======
                             <th><g:message code="usuario.perfil.label" default="Perfil" /></th>
->>>>>>> validacion
-=======
-                            <th><g:message code="usuario.perfil.label" default="Perfil" /></th>
->>>>>>> validacion
                         
                         </tr>
                     </thead>

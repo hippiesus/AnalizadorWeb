@@ -8,13 +8,6 @@ class Usuario {
     static constraints = {
         nombre(blank:false)
         contrasena(blank:false)
-<<<<<<< HEAD
-<<<<<<< HEAD
-        perfil(blank:false)
-=======
->>>>>>> validacion
-=======
->>>>>>> validacion
     }
     static belongsTo = [Proyecto,Perfil]
     static mapping = {

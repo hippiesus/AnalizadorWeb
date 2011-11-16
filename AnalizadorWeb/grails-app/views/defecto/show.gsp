@@ -29,33 +29,9 @@
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name"><g:message code="defecto.nombre.label" default="Nombre" /></td>
-                            
-                            <td valign="top" class="value">${fieldValue(bean: defectoInstance, field: "nombre")}</td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name"><g:message code="defecto.descripcion.label" default="Descripcion" /></td>
-                            
-                            <td valign="top" class="value">${fieldValue(bean: defectoInstance, field: "descripcion")}</td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
-<<<<<<< HEAD
-<<<<<<< HEAD
                             <td valign="top" class="name"><g:message code="defecto.clasificacion.label" default="Clasificacion" /></td>
                             
-                            <td valign="top" class="value">${fieldValue(bean: defectoInstance, field: "clasificacion")}</td>
-=======
-                            <td valign="top" class="name"><g:message code="defecto.expresion.label" default="Expresion" /></td>
-                            
-=======
-                            <td valign="top" class="name"><g:message code="defecto.expresion.label" default="Expresion" /></td>
-                            
->>>>>>> validacion
-                            <td valign="top" class="value">${fieldValue(bean: defectoInstance, field: "expresion")}</td>
+                            <td valign="top" class="value"><g:link controller="clasificacion" action="show" id="${defectoInstance?.clasificacion?.id}">${defectoInstance?.clasificacion?.encodeAsHTML()}</g:link></td>
                             
                         </tr>
                     
@@ -67,13 +43,23 @@
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name"><g:message code="defecto.clasificacion.label" default="Clasificacion" /></td>
+                            <td valign="top" class="name"><g:message code="defecto.descripcion.label" default="Descripcion" /></td>
                             
-                            <td valign="top" class="value"><g:link controller="clasificacion" action="show" id="${defectoInstance?.clasificacion?.id}">${defectoInstance?.clasificacion?.encodeAsHTML()}</g:link></td>
-<<<<<<< HEAD
->>>>>>> validacion
-=======
->>>>>>> validacion
+                            <td valign="top" class="value">${fieldValue(bean: defectoInstance, field: "descripcion")}</td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
+                            <td valign="top" class="name"><g:message code="defecto.expresion.label" default="Expresion" /></td>
+                            
+                            <td valign="top" class="value">${fieldValue(bean: defectoInstance, field: "expresion")}</td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
+                            <td valign="top" class="name"><g:message code="defecto.nombre.label" default="Nombre" /></td>
+                            
+                            <td valign="top" class="value">${fieldValue(bean: defectoInstance, field: "nombre")}</td>
                             
                         </tr>
                     

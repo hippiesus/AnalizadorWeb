@@ -8,19 +8,7 @@ class Defecto {
     Clasificacion clasificacion
     
     static constraints = {
-        nombre(blank:false)
-        descripcion(blank:false)
-<<<<<<< HEAD
-<<<<<<< HEAD
-        clasificacion(blank:false)
-=======
-        expresion(blank:false)
-        coreccion(blank:false)
->>>>>>> validacion
-=======
-        expresion(blank:false)
-        coreccion(blank:false)
->>>>>>> validacion
+        nombre(unique:true)
     }
     static belongsTo = [Clasificacion]
     static hasMany = [programas:Programa]

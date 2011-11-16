@@ -32,39 +32,10 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                  <label for="nombre"><g:message code="defecto.nombre.label" default="Nombre" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: defectoInstance, field: 'nombre', 'errors')}">
-                                    <g:textField name="nombre" value="${defectoInstance?.nombre}" />
-                                </td>
-                            </tr>
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                  <label for="descripcion"><g:message code="defecto.descripcion.label" default="Descripcion" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: defectoInstance, field: 'descripcion', 'errors')}">
-                                    <g:textField name="descripcion" value="${defectoInstance?.descripcion}" />
-                                </td>
-                            </tr>
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-<<<<<<< HEAD
-<<<<<<< HEAD
                                   <label for="clasificacion"><g:message code="defecto.clasificacion.label" default="Clasificacion" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: defectoInstance, field: 'clasificacion', 'errors')}">
-                                    <g:textField name="clasificacion" value="${defectoInstance?.clasificacion}" />
-=======
-                                  <label for="expresion"><g:message code="defecto.expresion.label" default="Expresion" /></label>
-                                </td>
-=======
-                                  <label for="expresion"><g:message code="defecto.expresion.label" default="Expresion" /></label>
-                                </td>
->>>>>>> validacion
-                                <td valign="top" class="value ${hasErrors(bean: defectoInstance, field: 'expresion', 'errors')}">
-                                    <g:textField name="expresion" value="${defectoInstance?.expresion}" />
+                                    <g:select name="clasificacion.id" from="${modelo.Clasificacion.list()}" optionKey="id" value="${defectoInstance?.clasificacion?.id}"  />
                                 </td>
                             </tr>
                         
@@ -79,14 +50,28 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                  <label for="clasificacion"><g:message code="defecto.clasificacion.label" default="Clasificacion" /></label>
+                                  <label for="descripcion"><g:message code="defecto.descripcion.label" default="Descripcion" /></label>
                                 </td>
-                                <td valign="top" class="value ${hasErrors(bean: defectoInstance, field: 'clasificacion', 'errors')}">
-                                    <g:select name="clasificacion.id" from="${modelo.Clasificacion.list()}" optionKey="id" value="${defectoInstance?.clasificacion?.id}"  />
-<<<<<<< HEAD
->>>>>>> validacion
-=======
->>>>>>> validacion
+                                <td valign="top" class="value ${hasErrors(bean: defectoInstance, field: 'descripcion', 'errors')}">
+                                    <g:textField name="descripcion" value="${defectoInstance?.descripcion}" />
+                                </td>
+                            </tr>
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                  <label for="expresion"><g:message code="defecto.expresion.label" default="Expresion" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: defectoInstance, field: 'expresion', 'errors')}">
+                                    <g:textField name="expresion" value="${defectoInstance?.expresion}" />
+                                </td>
+                            </tr>
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                  <label for="nombre"><g:message code="defecto.nombre.label" default="Nombre" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: defectoInstance, field: 'nombre', 'errors')}">
+                                    <g:textField name="nombre" value="${defectoInstance?.nombre}" />
                                 </td>
                             </tr>
                         

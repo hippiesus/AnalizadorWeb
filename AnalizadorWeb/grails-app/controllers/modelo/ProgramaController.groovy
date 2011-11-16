@@ -20,7 +20,7 @@ class ProgramaController {
     }
 
     def save = {
-        upload()
+        // upload()
         def programaInstance = new Programa(params)
         if (programaInstance.save(flush: true)) {
             flash.message = "${message(code: 'default.created.message', args: [message(code: 'programa.label', default: 'Programa'), programaInstance.id])}"
@@ -99,14 +99,14 @@ class ProgramaController {
         }
     }
     def upload= {
-    def f = request.getFile('myFile')
-    if(!f.empty) {
-      f.transferTo( new File('myfile.txt'))
-      response.sendError(200,'Done');
-    }    
-    else {
-       flash.message = 'file cannot be empty'
-       render(view:'uploadForm')
+        def f = request.getFile('myFile')
+        if(!f.empty) {
+            f.transferTo( new File('myfile.txt'))
+            response.sendError(200,'Done');
+        }    
+        else {
+            flash.message = 'file cannot be empty'
+            render(view:'uploadForm')
+        }
     }
-}
 }
