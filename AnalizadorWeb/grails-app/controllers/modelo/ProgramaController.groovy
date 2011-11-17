@@ -103,10 +103,6 @@ class ProgramaController {
         if(!f.empty) {
             f.transferTo( new File('myfile.txt'))
             response.sendError(200,'Done');
-        }    
-        else {
-            flash.message = 'file cannot be empty'
-            render(view:'uploadForm')
         }
     }
 }

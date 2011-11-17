@@ -104,9 +104,7 @@ class DefectoController {
             def patrones = new XmlSlurper().parse(new File("patrones.xml"))
             patrones.patron.each({ 
                     for(int x=0; x< Clasificacion.list().size();x++ ){
-                        println "a"+Clasificacion.list().get(x).getId()
                         if(it.clasificacion.equals(Clasificacion.list().get(x).getNombre().toLowerCase())){
-                            println "nombre ${it.nombre} desc ${it.descripcion} corr ${it.correccion} exp ${it.expresion}"
                             String nombre= it.nombre
                             String descripcion = it.descripcion
                             String coreccion=it.correccion
