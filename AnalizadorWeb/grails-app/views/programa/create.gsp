@@ -24,37 +24,29 @@
         <g:renderErrors bean="${programaInstance}" as="list" />
       </div>
     </g:hasErrors>
-    <g:form action="save" >
+    <g:form action="save" method="POST" enctype="multipart/form-data">
       <div class="dialog">
         <table>
           <tbody>
 
             <tr class="prop">
               <td valign="top" class="name">
-                <label for="nombre"><g:message code="programa.nombre.label" default="Nombre" /></label>
+                <label for="codigo"><g:message code="programa.codigo.label" default="Codigo" /></label>
               </td>
-              <td valign="top" class="value ${hasErrors(bean: programaInstance, field: 'nombre', 'errors')}">
-          <g:textField name="nombre" value="${programaInstance?.nombre}" />
-          </td>
-          </tr>
+             <td>
+                <input type="file" name="codigo" />        
+              </td>
+            </tr>
 
-          <tr class="prop">
-            <td valign="top" class="name">
-              <label for="descripcion"><g:message code="programa.descripcion.label" default="Descripcion" /></label>
-            </td>
-            <td valign="top" class="value ${hasErrors(bean: programaInstance, field: 'descripcion', 'errors')}">
+            <tr class="prop">
+              <td valign="top" class="name">
+                <label for="descripcion"><g:message code="programa.descripcion.label" default="Descripcion" /></label>
+              </td>
+              <td valign="top" class="value ${hasErrors(bean: programaInstance, field: 'descripcion', 'errors')}">
           <g:textField name="descripcion" value="${programaInstance?.descripcion}" />
           </td>
           </tr>
 
-          <tr class="prop">
-            <td valign="top" class="name">
-              <label for="codigo"><g:message code="programa.codigo.label" default="Codigo" /></label>
-            </td>
-            <td valign="top" class="value ${hasErrors(bean: programaInstance, field: 'codigo', 'errors')}">
-          <g:textField name="codigo" value="${programaInstance?.codigo}" />
-          </td>
-          </tr>
 
           <tr class="prop">
             <td valign="top" class="name">

@@ -20,8 +20,18 @@ class ProgramaController {
     }
 
     def save = {
-        // upload()
-        def programaInstance = new Programa(params)
+        def f = request.getFile('codigo')
+        def file
+        if(!f.empty) {
+            try{
+                file = new File(f.fileItem.fileName)
+                f.transferTo(file)
+            }catch(Exception e){
+            }
+            //redirect(action: "list", params: params)        
+        }
+        println file.getText()
+        def programaInstance = new Programa(nombre:f.fileItem.fileName,descripcion:params.descripcion,codigo:file.getText().replace("\n","<br>"),proyecto:Proyecto.get(params.proyecto.id))
         if (programaInstance.save(flush: true)) {
             flash.message = "${message(code: 'default.created.message', args: [message(code: 'programa.label', default: 'Programa'), programaInstance.id])}"
             redirect(action: "show", id: programaInstance.id)
@@ -96,13 +106,6 @@ class ProgramaController {
         else {
             flash.message = "${message(code: 'default.not.found.message', args: [message(code: 'programa.label', default: 'Programa'), params.id])}"
             redirect(action: "list")
-        }
-    }
-    def upload= {
-        def f = request.getFile('myFile')
-        if(!f.empty) {
-            f.transferTo( new File('myfile.txt'))
-            response.sendError(200,'Done');
         }
     }
 }

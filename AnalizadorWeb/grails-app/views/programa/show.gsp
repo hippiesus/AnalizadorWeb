@@ -45,7 +45,7 @@
                         <tr class="prop">
                             <td valign="top" class="name"><g:message code="programa.codigo.label" default="Codigo" /></td>
                             
-                            <td valign="top" class="value">${fieldValue(bean: programaInstance, field: "codigo")}</td>
+                            <td valign="top" class="value">${programaInstance.getCodigo().replace("\n","<br>")}</td>
                             
                         </tr>
                     
