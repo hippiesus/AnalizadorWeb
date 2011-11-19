@@ -9,7 +9,7 @@ class Programa {
     static constraints = {
         nombre(blank:false)
         descripcion(blank:false)
-        codigo(blank:false)
+        codigo(blank:false,maxSize:9999)
     }
     static belongsTo = [Proyecto,Defecto]
     static hasMany = [programaFecha:ProgramaFecha,defectos:Defecto]
