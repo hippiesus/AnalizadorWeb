@@ -30,7 +30,6 @@ class ProgramaController {
             }
             //redirect(action: "list", params: params)        
         }
-        println file.getText()
         def programaInstance = new Programa(nombre:f.fileItem.fileName,descripcion:params.descripcion,codigo:file.getText().replace("\n","<br>"),proyecto:Proyecto.get(params.proyecto.id))
         if (programaInstance.save(flush: true)) {
             flash.message = "${message(code: 'default.created.message', args: [message(code: 'programa.label', default: 'Programa'), programaInstance.id])}"
@@ -43,6 +42,7 @@ class ProgramaController {
 
     def show = {
         def programaInstance = Programa.get(params.id)
+       // programaInstance.getCodigo().each({print it})
         if (!programaInstance) {
             flash.message = "${message(code: 'default.not.found.message', args: [message(code: 'programa.label', default: 'Programa'), params.id])}"
             redirect(action: "list")

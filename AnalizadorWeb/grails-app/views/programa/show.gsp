@@ -93,5 +93,6 @@
                 </g:form>
             </div>
         </div>
+<%//programaInstance.getCodigo().each({print it.replace("\n","<br>")})%>
     </body>
 </html>

@@ -16,6 +16,6 @@ class ProgramaFecha {
         version false
     }
     def String toString() {
-        return programa+fecha
+        return programa.getNombre()+" "+fecha.toString()
     }
 }
