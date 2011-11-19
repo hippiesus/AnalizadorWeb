@@ -25,14 +25,17 @@
       <span class="menuButton"><a class="controller" href="${createLink(uri: '/programa/index')}"><g:message code="Programas"/></a></span> |
       <span class="menuButton"><a class="controller" href="${createLink(uri: '/proyecto/index')}"><g:message code="Proyectos"/></a></span> |
       <span class="menuButton"><a class="controller" href="${createLink(uri: '/usuario/index')}"><g:message code="Usuarios"/></a></span> |
+      <span class="menuButton"><a class="controller" href="${createLink(uri: '/programaFecha/index')}"><g:message code="Estadisticas"/></a></span> |
     </ul>
   </div>
 <%}else if(session.usuario && "usuario".equals(session.usuario.perfil.nombre)){%>
-   <div class="nav" >
+  <div class="nav" >
     <ul>
       <span class="menuButton"><a class="home" href="${createLink(uri: '/proyecto/list')}"><g:message code="default.home.label"/></a></span> |
       <span class="menuButton"><a class="controller" href="${createLink(uri: '/programa/index')}"><g:message code="Programas"/></a></span> |
       <span class="menuButton"><a class="controller" href="${createLink(uri: '/proyecto/index')}"><g:message code="Proyectos"/></a></span> |
+      <span class="menuButton"><a class="controller" href="${createLink(uri: '/programaFecha/index')}"><g:message code="Estadisticas"/></a></span> |
+
     </ul>
   </div>
 <%}%>
