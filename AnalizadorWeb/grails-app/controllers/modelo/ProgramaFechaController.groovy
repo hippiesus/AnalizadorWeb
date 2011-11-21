@@ -1,5 +1,7 @@
 package modelo
 
+import java.text.*
+
 class ProgramaFechaController {
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
@@ -96,5 +98,37 @@ class ProgramaFechaController {
             flash.message = "${message(code: 'default.not.found.message', args: [message(code: 'programaFecha.label', default: 'ProgramaFecha'), params.id])}"
             redirect(action: "list")
         }
+    }
+    def upload = {
+        def f = request.getFile('estadistica')
+        if(!f.empty) {
+            f.transferTo( new File('estadistica.xml') )
+            def estadisticas = new XmlSlurper().parse(new File("estadistica.xml"))
+            estadisticas.estadistica.each({
+                    for(int y=0; y<Defecto.list().size();y++){
+                        for(int x=0; x< Programa.list().size();x++ ){
+                            if(it.nombreArchivo.toString().contains(Programa.list().get(x).getNombre().toLowerCase())){
+                                //try{
+                                def cantidadDefectoBajo=it.cantidadDefectosBajo.toString()
+                                def cantidadDefectoMedio=it.cantidadDefectosMedio.toString()
+                                def cantidadDefectoCritico=it.cantidadDefectosCritico.toString()
+                                def fechaXml =it.fecha.toString().substring(4)
+                                DateFormat dfm = new SimpleDateFormat("MMM dd HH:mm:ss z yyyy");
+                                dfm.setTimeZone(TimeZone.getTimeZone("Chile/EasterIsland"));
+                                Date par = dfm.parse(fechaXml);
+                                def fecha = new Fecha(fecha:par).save()  
+                                new ProgramaFecha(Programa:Programa.list().get(x),cantidadDefectosCritico:cantidadDefectoCritico,cantidadDefectosMedio:cantidadDefectoMedio,cantidadDefectosBajo:cantidadDefectoBajo,fecha:fecha).save(failOnError: true)
+                                /*}catch(Exception e){
+                                flash.message= e.getMessage()
+                            
+                                }*/
+                            }
+                        }
+                    }
+                })
+            redirect(action: "list", params: params)
+            //response.sendError(200,'Done');
+        }    
+     
     }
 }

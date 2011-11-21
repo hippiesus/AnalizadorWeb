@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<estadisticas>
+<estadistica>
+<cierre_cursor>[]</cierre_cursor>
+<pls_integer>[]</pls_integer>
+<binary_float>[]</binary_float>
+<binary_double>[]</binary_double>
+<fecha>Wed Nov 09 14:14:36 CLST 2011</fecha>
+<nombreArchivo>/Users/juancarlos/tmp/agregarreparacion copia.sql</nombreArchivo>
+<cantidadDefectosBajo>0</cantidadDefectosBajo>
+<cantidadDefectosMedio>0</cantidadDefectosMedio>
+<cantidadDefectosCritico>0</cantidadDefectosCritico>
+</estadistica>
+<estadistica>
+<cierre_cursor>[]</cierre_cursor>
+<pls_integer>[38, 39, 40, 42]</pls_integer>
+<binary_float>[]</binary_float>
+<binary_double>[]</binary_double>
+<fecha>Wed Nov 09 14:14:36 CLST 2011</fecha>
+<nombreArchivo>/Users/juancarlos/tmp/agregarreparacion.sql</nombreArchivo>
+<cantidadDefectosBajo>4</cantidadDefectosBajo>
+<cantidadDefectosMedio>0</cantidadDefectosMedio>
+<cantidadDefectosCritico>0</cantidadDefectosCritico>
+</estadistica>
+<estadistica>
+<cierre_cursor>[7]</cierre_cursor>
+<pls_integer>[]</pls_integer>
+<binary_float>[]</binary_float>
+<binary_double>[]</binary_double>
+<fecha>Wed Nov 09 14:14:36 CLST 2011</fecha>
+<nombreArchivo>/Users/juancarlos/tmp/funcion1.sql</nombreArchivo>
+<cantidadDefectosBajo>0</cantidadDefectosBajo>
+<cantidadDefectosMedio>1</cantidadDefectosMedio>
+<cantidadDefectosCritico>0</cantidadDefectosCritico>
+</estadistica>
+<estadistica>
+<cierre_cursor>[]</cierre_cursor>
+<pls_integer>[]</pls_integer>
+<binary_float>[]</binary_float>
+<binary_double>[]</binary_double>
+<fecha>Wed Nov 09 14:14:36 CLST 2011</fecha>
+<nombreArchivo>/Users/juancarlos/tmp/funcion2.sql</nombreArchivo>
+<cantidadDefectosBajo>0</cantidadDefectosBajo>
+<cantidadDefectosMedio>0</cantidadDefectosMedio>
+<cantidadDefectosCritico>0</cantidadDefectosCritico>
+</estadistica>
+</estadisticas>
