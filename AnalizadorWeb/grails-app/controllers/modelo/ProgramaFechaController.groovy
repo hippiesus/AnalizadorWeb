@@ -126,7 +126,7 @@ class ProgramaFechaController {
                             dfm.setTimeZone(TimeZone.getTimeZone("Chile/EasterIsland"));
                             Date par = dfm.parse(fechaXml);
                             def fecha = new Fecha(fecha:par).save()
-                            new Programa(codigo:Programa.list().get(x).getCodigo(),descripcion:Programa.list().get(x).getDescripcion(),nombre:Programa.list().get(x).getNombre(),proyecto:Programa.list().get(x).getProyecto(), Defecto:defecto).save(failOnError: true)
+                        //    new Programa(codigo:Programa.list().get(x).getCodigo(),descripcion:Programa.list().get(x).getDescripcion(),nombre:Programa.list().get(x).getNombre(),proyecto:Programa.list().get(x).getProyecto(), Defecto:defecto).save(failOnError: true)
                             new ProgramaFecha(Programa:Programa.list().get(x),cantidadDefectosCritico:cantidadDefectoCritico,cantidadDefectosMedio:cantidadDefectoMedio,cantidadDefectosBajo:cantidadDefectoBajo,fecha:fecha).save(failOnError: true)
                             /*}catch(Exception e){
                             flash.message= e.getMessage()
