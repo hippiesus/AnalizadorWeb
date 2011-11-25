@@ -105,13 +105,14 @@ class ProgramaFechaController {
             f.transferTo( new File('estadistica.xml') )
             def estadisticas = new XmlSlurper().parse(new File("estadistica.xml"))
             estadisticas.estadistica.each({
-                    
+                    def defecto
                     for(int x=0; x< Programa.list().size();x++ ){
                         for(int y=0; y<Defecto.list().size();y++){
                             for(int z=0; z<Defecto.list().size();z++){
                                 println it."${Defecto.list().get(z).getNombre()}"
                                 if(Defecto.list().get(y).getNombre().equals(it."${Defecto.list().get(z).getNombre()}")){
-                                    println Defecto.list().get(y).getNombre()                                
+                                  //  println Defecto.list().get(y).getNombre()
+                                    defecto = Defecto.list().get(y)
                                 }
                             }
                         }
@@ -124,7 +125,8 @@ class ProgramaFechaController {
                             DateFormat dfm = new SimpleDateFormat("MMM dd HH:mm:ss z yyyy");
                             dfm.setTimeZone(TimeZone.getTimeZone("Chile/EasterIsland"));
                             Date par = dfm.parse(fechaXml);
-                            def fecha = new Fecha(fecha:par).save()  
+                            def fecha = new Fecha(fecha:par).save()
+                            new Programa(codigo:Programa.list().get(x).getCodigo(),descripcion:Programa.list().get(x).getDescripcion(),nombre:Programa.list().get(x).getNombre(),proyecto:Programa.list().get(x).getProyecto(), Defecto:defecto).save(failOnError: true)
                             new ProgramaFecha(Programa:Programa.list().get(x),cantidadDefectosCritico:cantidadDefectoCritico,cantidadDefectosMedio:cantidadDefectoMedio,cantidadDefectosBajo:cantidadDefectoBajo,fecha:fecha).save(failOnError: true)
                             /*}catch(Exception e){
                             flash.message= e.getMessage()

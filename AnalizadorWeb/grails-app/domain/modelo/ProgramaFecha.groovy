@@ -1,6 +1,6 @@
 package modelo
 
-class ProgramaFecha {
+class ProgramaFecha implements Serializable{
     int cantidadDefectosBajo
     int cantidadDefectosMedio
     int cantidadDefectosCritico
@@ -14,6 +14,7 @@ class ProgramaFecha {
     static belongsTo = [Fecha,Programa]
     static mapping = {
         version false
+        id composite:['fecha','programa'], generator:'assigned'
     }
     def String toString() {
         return programa.getNombre()+" "+fecha.toString()
