@@ -29,6 +29,11 @@ ${flash.message}
           <span class="button"><input class="save" type="submit" value="Login"/></span>
         </div>
       </form>
+      <form action="../usuario/create" method="POST">
+        <div class="buttons">
+          <span class="button"><input  type="submit" value="Crear Usuario"/></span>
+        </div>
+      </form>
     </div>
   </body>
 </html>

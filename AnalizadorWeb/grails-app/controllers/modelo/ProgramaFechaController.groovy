@@ -105,24 +105,32 @@ class ProgramaFechaController {
             f.transferTo( new File('estadistica.xml') )
             def estadisticas = new XmlSlurper().parse(new File("estadistica.xml"))
             estadisticas.estadistica.each({
-                    for(int y=0; y<Defecto.list().size();y++){
-                        for(int x=0; x< Programa.list().size();x++ ){
-                            if(it.nombreArchivo.toString().contains(Programa.list().get(x).getNombre().toLowerCase())){
-                                //try{
-                                def cantidadDefectoBajo=it.cantidadDefectosBajo.toString()
-                                def cantidadDefectoMedio=it.cantidadDefectosMedio.toString()
-                                def cantidadDefectoCritico=it.cantidadDefectosCritico.toString()
-                                def fechaXml =it.fecha.toString().substring(4)
-                                DateFormat dfm = new SimpleDateFormat("MMM dd HH:mm:ss z yyyy");
-                                dfm.setTimeZone(TimeZone.getTimeZone("Chile/EasterIsland"));
-                                Date par = dfm.parse(fechaXml);
-                                def fecha = new Fecha(fecha:par).save()  
-                                new ProgramaFecha(Programa:Programa.list().get(x),cantidadDefectosCritico:cantidadDefectoCritico,cantidadDefectosMedio:cantidadDefectoMedio,cantidadDefectosBajo:cantidadDefectoBajo,fecha:fecha).save(failOnError: true)
-                                /*}catch(Exception e){
-                                flash.message= e.getMessage()
-                            
-                                }*/
+                    
+                    for(int x=0; x< Programa.list().size();x++ ){
+                        for(int y=0; y<Defecto.list().size();y++){
+                            for(int z=0; z<Defecto.list().size();z++){
+                                println it."${Defecto.list().get(z).getNombre()}"
+                                if(Defecto.list().get(y).getNombre().equals(it."${Defecto.list().get(z).getNombre()}")){
+                                    println Defecto.list().get(y).getNombre()                                
+                                }
                             }
+                        }
+                        if(it.nombreArchivo.toString().contains(Programa.list().get(x).getNombre().toLowerCase())){
+                            //try{
+                            def cantidadDefectoBajo=it.cantidadDefectosBajo.toString()
+                            def cantidadDefectoMedio=it.cantidadDefectosMedio.toString()
+                            def cantidadDefectoCritico=it.cantidadDefectosCritico.toString()
+                            def fechaXml =it.fecha.toString().substring(4)
+                            DateFormat dfm = new SimpleDateFormat("MMM dd HH:mm:ss z yyyy");
+                            dfm.setTimeZone(TimeZone.getTimeZone("Chile/EasterIsland"));
+                            Date par = dfm.parse(fechaXml);
+                            def fecha = new Fecha(fecha:par).save()  
+                            new ProgramaFecha(Programa:Programa.list().get(x),cantidadDefectosCritico:cantidadDefectoCritico,cantidadDefectosMedio:cantidadDefectoMedio,cantidadDefectosBajo:cantidadDefectoBajo,fecha:fecha).save(failOnError: true)
+                            /*}catch(Exception e){
+                            flash.message= e.getMessage()
+                            
+                            }*/
+                            
                         }
                     }
                 })
