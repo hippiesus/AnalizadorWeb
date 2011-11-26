@@ -105,16 +105,14 @@ class ProgramaFechaController {
             f.transferTo( new File('estadistica.xml') )
             def estadisticas = new XmlSlurper().parse(new File("estadistica.xml"))
             estadisticas.estadistica.each({
-                    def defecto
+                    def defecto=[]
                     for(int x=0; x< Programa.list().size();x++ ){
                         for(int y=0; y<Defecto.list().size();y++){
-                            for(int z=0; z<Defecto.list().size();z++){
-                                println it."${Defecto.list().get(z).getNombre()}"
-                                if(Defecto.list().get(y).getNombre().equals(it."${Defecto.list().get(z).getNombre()}")){
-                                  //  println Defecto.list().get(y).getNombre()
-                                    defecto = Defecto.list().get(y)
-                                }
+                            if(it."${Defecto.list().get(y).getNombre()}".text().length()>2){ // reviso que los valores sean mas que los []
+                                println "defecto : "+Defecto.list().get(y).getNombre()
+                                defecto.add(Defecto.list().get(y))
                             }
+                            
                         }
                         if(it.nombreArchivo.toString().contains(Programa.list().get(x).getNombre().toLowerCase())){
                             //try{
@@ -126,7 +124,13 @@ class ProgramaFechaController {
                             dfm.setTimeZone(TimeZone.getTimeZone("Chile/EasterIsland"));
                             Date par = dfm.parse(fechaXml);
                             def fecha = new Fecha(fecha:par).save()
-                        //    new Programa(codigo:Programa.list().get(x).getCodigo(),descripcion:Programa.list().get(x).getDescripcion(),nombre:Programa.list().get(x).getNombre(),proyecto:Programa.list().get(x).getProyecto(), Defecto:defecto).save(failOnError: true)
+                            def programa = Programa.get(x+1)
+                            println programa
+                            println programa.defectos
+                            for(int d=0; d < defecto.size();d++){
+                                programa.addToDefectos(defecto[d])
+                            }
+                            programa.refresh()
                             new ProgramaFecha(Programa:Programa.list().get(x),cantidadDefectosCritico:cantidadDefectoCritico,cantidadDefectosMedio:cantidadDefectoMedio,cantidadDefectosBajo:cantidadDefectoBajo,fecha:fecha).save(failOnError: true)
                             /*}catch(Exception e){
                             flash.message= e.getMessage()
