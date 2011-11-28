@@ -106,11 +106,12 @@ class ProgramaFechaController {
             def estadisticas = new XmlSlurper().parse(new File("estadistica.xml"))
             estadisticas.estadistica.each({
                     def defecto=[]
+                    def contdef=[]
                     for(int x=0; x< Programa.list().size();x++ ){
                         for(int y=0; y<Defecto.list().size();y++){
                             if(it."${Defecto.list().get(y).getNombre()}".text().length()>2){ // reviso que los valores sean mas que los []
-                                println "defecto : "+Defecto.list().get(y).getNombre()
                                 defecto.add(Defecto.list().get(y))
+                                contdef.add(y)
                             }
                             
                         }
@@ -125,12 +126,21 @@ class ProgramaFechaController {
                             Date par = dfm.parse(fechaXml);
                             def fecha = new Fecha(fecha:par).save()
                             def programa = Programa.get(x+1)
-                            println programa
-                            println programa.defectos
+                            
                             for(int d=0; d < defecto.size();d++){
-                                programa.addToDefectos(defecto[d])
+                                def lineas
+                                lineas=it."${defecto[d]}".text().replace("[","")
+                                lineas=lineas.replace("]","")
+                                lineas=lineas.replace(" ","")
+                                String[] linea= lineas.split(",")
+                                for(int l=0; l<linea.size();l++){
+                                    def dp=new DefectoProgramas(numeroLinea:linea[l],defecto:defecto[d],programa:programa).save(failOnError:true)
+                                    programa.addToDefectos(dp)
+                                }
+                                programa.refresh()
                             }
-                            programa.refresh()
+                        
+                            
                             new ProgramaFecha(Programa:Programa.list().get(x),cantidadDefectosCritico:cantidadDefectoCritico,cantidadDefectosMedio:cantidadDefectoMedio,cantidadDefectosBajo:cantidadDefectoBajo,fecha:fecha).save(failOnError: true)
                             /*}catch(Exception e){
                             flash.message= e.getMessage()

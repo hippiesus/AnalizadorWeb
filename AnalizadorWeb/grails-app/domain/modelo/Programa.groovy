@@ -11,9 +11,9 @@ class Programa {
         descripcion(blank:false)
         codigo(blank:false,maxSize:9999)
     }
-    static belongsTo = [Proyecto,Defecto]
-    static hasMany = [programaFecha:ProgramaFecha,defectos:Defecto]
-    static mappedBy = [programaDefecto:'prgramaDefecto']
+    static belongsTo = [Proyecto]
+    static hasMany = [programaFecha:ProgramaFecha,defectos:DefectoProgramas]
+   // static mappedBy = [programaDefecto:'prgramaDefecto']
     static mapping = {
         version false
     }

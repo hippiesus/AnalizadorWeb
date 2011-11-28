@@ -11,8 +11,8 @@ class Defecto {
         nombre(unique:true)
     }
     static belongsTo = [Clasificacion]
-    static hasMany = [programas:Programa]
-    static mappedBy = [programaDefecto:'programaDefecto']
+    static hasMany = [programas:DefectoProgramas]
+    //static mappedBy = [programaDefecto:'programaDefecto']
     static mapping = {
         version false
     }
