@@ -20,29 +20,37 @@ class ProgramaController {
     }
 
     def save = {
-        def f = request.getFile('codigo')
-        def file
-        if(!f.empty) {
-            try{
-                file = new File(f.fileItem.fileName)
-                f.transferTo(file)
-            }catch(Exception e){
+        try{
+            def f = request.getFile('codigo')
+            def file
+            if(!f.empty) {
+                try{
+                    file = new File(f.fileItem.fileName)
+                    f.transferTo(file)
+                }catch(Exception e){
+                }
+                //redirect(action: "list", params: params)        
+            }else{
+                flash.message = "Debe seleccionar el archivo"
+                redirect(action: "create")
             }
-            //redirect(action: "list", params: params)        
-        }
-        def programaInstance = new Programa(nombre:f.fileItem.fileName,descripcion:params.descripcion,codigo:file.getText().replace("\n","<br>"),proyecto:Proyecto.get(params.proyecto.id))
-        if (programaInstance.save(flush: true)) {
-            flash.message = "${message(code: 'default.created.message', args: [message(code: 'programa.label', default: 'Programa'), programaInstance.id])}"
-            redirect(action: "show", id: programaInstance.id)
-        }
-        else {
-            render(view: "create", model: [programaInstance: programaInstance])
+            def programaInstance = new Programa(nombre:f.fileItem.fileName,descripcion:params.descripcion,codigo:file.getText().replace("\n","<br>"),proyecto:Proyecto.get(params.proyecto.id))
+            if (programaInstance.save(flush: true)) {
+                flash.message = "${message(code: 'default.created.message', args: [message(code: 'programa.label', default: 'Programa'), programaInstance.id])}"
+                redirect(action: "show", id: programaInstance.id)
+            }
+            else {
+                render(view: "create", model: [programaInstance: programaInstance])
+            }
+        }catch(Exception e){
+            flash.message = "Error al procesar el archivo seleccionado"
+            redirect(action: "create")
         }
     }
 
     def show = {
         def programaInstance = Programa.get(params.id)
-       // programaInstance.getCodigo().each({print it})
+        // programaInstance.getCodigo().each({print it})
         if (!programaInstance) {
             flash.message = "${message(code: 'default.not.found.message', args: [message(code: 'programa.label', default: 'Programa'), params.id])}"
             redirect(action: "list")

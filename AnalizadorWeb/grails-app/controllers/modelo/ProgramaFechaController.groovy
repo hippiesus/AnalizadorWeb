@@ -100,59 +100,71 @@ class ProgramaFechaController {
         }
     }
     def upload = {
-        def f = request.getFile('estadistica')
-        if(!f.empty) {
-            f.transferTo( new File('estadistica.xml') )
-            def estadisticas = new XmlSlurper().parse(new File("estadistica.xml"))
-            estadisticas.estadistica.each({
-                    def defecto=[]
-                    def contdef=[]
-                    for(int x=0; x< Programa.list().size();x++ ){
-                        for(int y=0; y<Defecto.list().size();y++){
-                            if(it."${Defecto.list().get(y).getNombre()}".text().length()>2){ // reviso que los valores sean mas que los []
-                                defecto.add(Defecto.list().get(y))
-                                contdef.add(y)
-                            }
-                            
-                        }
-                        if(it.nombreArchivo.toString().contains(Programa.list().get(x).getNombre().toLowerCase())){
-                            //try{
-                            def cantidadDefectoBajo=it.cantidadDefectosBajo.toString()
-                            def cantidadDefectoMedio=it.cantidadDefectosMedio.toString()
-                            def cantidadDefectoCritico=it.cantidadDefectosCritico.toString()
-                            def fechaXml =it.fecha.toString().substring(4)
-                            DateFormat dfm = new SimpleDateFormat("MMM dd HH:mm:ss z yyyy");
-                            dfm.setTimeZone(TimeZone.getTimeZone("Chile/EasterIsland"));
-                            Date par = dfm.parse(fechaXml);
-                            def fecha = new Fecha(fecha:par).save()
-                            def programa = Programa.get(x+1)
-                            
-                            for(int d=0; d < defecto.size();d++){
-                                def lineas
-                                lineas=it."${defecto[d]}".text().replace("[","")
-                                lineas=lineas.replace("]","")
-                                lineas=lineas.replace(" ","")
-                                String[] linea= lineas.split(",")
-                                for(int l=0; l<linea.size();l++){
-                                    def dp=new DefectoProgramas(numeroLinea:linea[l],defecto:defecto[d],programa:programa).save(failOnError:true)
-                                    programa.addToDefectos(dp)
+        try{
+            def f = request.getFile('estadistica')
+            if(!f.empty) {
+                f.transferTo( new File('estadistica.xml') )
+                def estadisticas = new XmlSlurper().parse(new File("estadistica.xml"))
+                estadisticas.estadistica.each({
+                        def defecto=[]
+                        def contdef=[]
+                        for(int x=0; x< Programa.list().size();x++ ){
+                            for(int y=0; y<Defecto.list().size();y++){
+                                if(it."${Defecto.list().get(y).getNombre()}".text().length()>2){ // reviso que los valores sean mas que los []
+                                    defecto.add(Defecto.list().get(y))
+                                    contdef.add(y)
                                 }
-                                programa.refresh()
+                            
                             }
+                            if(it.nombreArchivo.toString().contains(Programa.list().get(x).getNombre().toLowerCase())){
+                                //try{
+                                def cantidadDefectoBajo=it.cantidadDefectosBajo.toString()
+                                def cantidadDefectoMedio=it.cantidadDefectosMedio.toString()
+                                def cantidadDefectoCritico=it.cantidadDefectosCritico.toString()
+                                def fechaXml =it.fecha.toString().substring(4)
+                                DateFormat dfm = new SimpleDateFormat("MMM dd HH:mm:ss z yyyy");
+                                dfm.setTimeZone(TimeZone.getTimeZone("Chile/EasterIsland"));
+                                Date par = dfm.parse(fechaXml);
+                                def fecha = new Fecha(fecha:par).save()
+                                def programa = Programa.get(x+1)
+                                println programa
+                                for(int d=0; d < defecto.size();d++){
+                                    def lineas
+                                    lineas=it."${defecto[d]}".text().replace("[","")
+                                    lineas=lineas.replace("]","")
+                                    lineas=lineas.replace(" ","")
+                                    String[] linea= lineas.split(",")
+                                    for(int l=0; l<linea.size();l++){
+                                        def dp=new DefectoProgramas(numeroLinea:linea[l],defecto:defecto[d],programa:programa).save(failOnError:true)
+                                        programa.addToDefectos(dp)
+                                    }
+                                    try{
+                                        programa.refresh()
+                                    }catch(Exception e){
+                                        programa.save(failOnError:true)                                    
+                                    }
+                                }
                         
                             
-                            new ProgramaFecha(Programa:Programa.list().get(x),cantidadDefectosCritico:cantidadDefectoCritico,cantidadDefectosMedio:cantidadDefectoMedio,cantidadDefectosBajo:cantidadDefectoBajo,fecha:fecha).save(failOnError: true)
-                            /*}catch(Exception e){
-                            flash.message= e.getMessage()
+                                new ProgramaFecha(Programa:Programa.list().get(x),cantidadDefectosCritico:cantidadDefectoCritico,cantidadDefectosMedio:cantidadDefectoMedio,cantidadDefectosBajo:cantidadDefectoBajo,fecha:fecha).save(failOnError: true)
+                                /*}catch(Exception e){
+                                flash.message= e.getMessage()
                             
-                            }*/
+                                }*/
                             
+                            }
                         }
-                    }
-                })
-            redirect(action: "list", params: params)
-            //response.sendError(200,'Done');
-        }    
+                    })
+                redirect(action: "list", params: params)
+                //response.sendError(200,'Done');
+            }else{
+                flash.message = "Debe seleccionar el archivo"
+                redirect(action: "create")
+            } 
+        }catch(Exception e){
+            flash.message = "Error al procesar el archivo seleccionado"
+            redirect(action: "create")
+        }
      
     }
 }

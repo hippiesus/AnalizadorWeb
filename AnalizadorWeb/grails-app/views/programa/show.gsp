@@ -45,24 +45,24 @@
         <tr class="prop">
           <td valign="top" class="name"><g:message code="programa.codigo.label" default="Codigo" /></td>
 <% def codigo=""
-   def agregado=""
-   def nueva=""
+def agregado=""
+def nueva=""
 
 String[] lineas = programaInstance.getCodigo().split("<br>")
 for(int y=1; y<lineas.length;y++){
-    def bandera=false
+  def bandera=false
   for(int x=0; x<DefectoProgramas.list().size();x++){
-      
-    if(y==DefectoProgramas.list().get(x).numeroLinea){
-      bandera=true
-     // nueva=nueva+y
-      agregado="<span style='color: red;'>"+lineas[y-1]+"</span><br>"
-      nueva=nueva+agregado
-    }/*else{
+    if(programaInstance.nombre.toString().equals(DefectoProgramas.list().get(x).getPrograma().nombre)){
+      if(y==DefectoProgramas.list().get(x).numeroLinea){
+        bandera=true
+        // nueva=nueva+y
+        agregado="<span style='color: red;'>"+lineas[y-1]+"</span><br>"
+        nueva=nueva+agregado
+      }/*else{
       agregado=lineas[y-1]+"<br>"
-    //  nueva=nueva+agregado
-    }*/
-    
+      //  nueva=nueva+agregado
+      }*/
+    }
   }
   if(bandera==false){
     agregado=lineas[y-1]+"<br>"

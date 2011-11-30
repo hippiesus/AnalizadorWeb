@@ -14,9 +14,9 @@ class DefectoController {
     }
 
     def create = {
-    def defectoInstance = new Defecto()
-    defectoInstance.properties = params
-    return [defectoInstance: defectoInstance]
+        def defectoInstance = new Defecto()
+        defectoInstance.properties = params
+        return [defectoInstance: defectoInstance]
     }
 
     def save = {
@@ -98,31 +98,38 @@ class DefectoController {
         }
     }
     def upload = {
-        def f = request.getFile('defectos')
-        if(!f.empty) {
-            f.transferTo( new File('patrones.xml') )
-            def patrones = new XmlSlurper().parse(new File("patrones.xml"))
-            patrones.patron.each({ 
-                    for(int x=0; x< Clasificacion.list().size();x++ ){
-                        if(it.clasificacion.equals(Clasificacion.list().get(x).getNombre().toLowerCase())){
-                            String nombre= it.nombre
-                            String descripcion = it.descripcion
-                            String coreccion=it.correccion
-                            String expresion=it.expresion
-                            try{
-                                new Defecto(nombre:nombre,descripcion:descripcion,coreccion:coreccion, expresion:expresion,clasificacion:Clasificacion.list().get(x)).save(failOnError: true)
+        try{
+            def f = request.getFile('defectos')
+            if(!f.empty) {
+                f.transferTo( new File('patrones.xml') )
+                def patrones = new XmlSlurper().parse(new File("patrones.xml"))
+                patrones.patron.each({ 
+                        for(int x=0; x< Clasificacion.list().size();x++ ){
+                            if(it.clasificacion.equals(Clasificacion.list().get(x).getNombre().toLowerCase())){
+                                String nombre= it.nombre
+                                String descripcion = it.descripcion
+                                String coreccion=it.correccion
+                                String expresion=it.expresion
+                                try{
+                                    new Defecto(nombre:nombre,descripcion:descripcion,coreccion:coreccion, expresion:expresion,clasificacion:Clasificacion.list().get(x)).save(failOnError: true)
                     
-                            }catch(Exception e){
-                                flash.message= "Los nombres de los defectos deben ser distintos"
+                                }catch(Exception e){
+                                    flash.message= "Los nombres de los defectos deben ser distintos"
                             
+                                }
                             }
                         }
-                    }
-                })
-            redirect(action: "list", params: params)
-            //response.sendError(200,'Done');
-        }    
-     
+                    })
+                redirect(action: "list", params: params)
+                //response.sendError(200,'Done');
+            }else{
+                flash.message = "Debe seleccionar el archivo"
+                redirect(action: "create")
+            }
+        }catch(Exception e){
+            flash.message = "Error al procesar el archivo seleccionado"
+            redirect(action: "create")
+        }
     }
  
 }
