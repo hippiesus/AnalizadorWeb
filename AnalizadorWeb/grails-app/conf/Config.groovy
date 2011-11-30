@@ -24,6 +24,8 @@ grails.mime.types = [ html: ['text/html','application/xhtml+xml'],
                       all: '*/*',
                       json: ['application/json','text/json'],
                       form: 'application/x-www-form-urlencoded',
+                      pdf: 'application/pdf',
+                      xls: 'application/vnd.ms-excel',
                       multipartForm: 'multipart/form-data'
                     ]
 

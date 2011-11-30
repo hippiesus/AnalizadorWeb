@@ -1,11 +1,10 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<estadisticas>
-<estadistica>
-<cierre_cursor>[14]</cierre_cursor>
-<fecha>Thu Oct 06 17:41:32 CLT 2011</fecha>
-<nombreArchivo>/Users/juancarlos/tmp/findcourse.sql</nombreArchivo>
-<cantidadDefectosBajo>0</cantidadDefectosBajo>
-<cantidadDefectosMedio>1</cantidadDefectosMedio>
-<cantidadDefectosCritico>0</cantidadDefectosCritico>
-</estadistica>
-</estadisticas>
+<patrones>
+	<patron>
+		<identificador>1</identificador>
+		<nombre>cierre_cursor</nombre>
+		<expresion>open identificador::close identificador</expresion>
+		<clasificacion>medio</clasificacion>
+		<descripcion>Los Cursores se deben abrir  con la siguiente sintaxis: “OPEN identificadorCursor;”, cuando se termine de utilizar se debe realizar el cierre con siguiente sintaxis: “Close identificadorCursor;”.</descripcion>
+		<correccion>debe realizar un cierre el cursor con la instruccion close identificador;</correccion>
+	</patron>
+</patrones>

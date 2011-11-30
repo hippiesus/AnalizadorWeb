@@ -1,6 +1,7 @@
 package modelo
 
 import java.text.*
+import org.codehaus.groovy.grails.commons.ConfigurationHolder
 
 class ProgramaFechaController {
 
@@ -9,10 +10,37 @@ class ProgramaFechaController {
     def index = {
         redirect(action: "list", params: params)
     }
-
+    def exportService
+    /*    int cantidadDefectosBajo
+    int cantidadDefectosMedio
+    int cantidadDefectosCritico
+    Fecha fecha
+    Programa programa*/
     def list = {
-        params.max = Math.min(params.max ? params.int('max') : 10, 100)
-        [programaFechaInstanceList: ProgramaFecha.list(params), programaFechaInstanceTotal: ProgramaFecha.count()]
+        if(!params.max) params.max = 10
+
+        if(params?.format && params.format != "html"){
+            response.contentType = ConfigurationHolder.config.grails.mime.types[params.format]
+            response.setHeader("Content-disposition", "attachment; filename=asistencia.${params.extension}")
+
+
+            List fields = ["cantidadDefectosBajo", "cantidadDefectosMedio","cantidadDefectosCritico","fecha","programa"]
+            Map labels = ["cantidadDefectosBajo": "cantidadDefectosBajo", "Cantidad Defectos Medio": "cantidadDefectosMedio","Cantidad Defectos Critico":"Cantidad Defectos Critico","fecha":"Fecha","programa":"Programa"]
+
+            // Formatter closure
+            def upperCase = { domain, value ->
+                return value.toUpperCase()
+            }
+
+            Map formatters = [usuario: upperCase]
+            //Map parameters = [nombre: "", "column.widths": [0.2, 0.3, 0.5]]
+            Map parameters = ["pdf.encoding":"UniGB-UCS2-H", "font.family": "STSong-Light"]
+
+            exportService.export(params.format, response.outputStream, ProgramaFecha.list(params), fields, labels, formatters, parameters)
+        }
+
+        [ programaFechaInstanceList: ProgramaFecha.list( params ), programaFechaInstanceTotal: ProgramaFecha.count()]
+
     }
 
     def create = {

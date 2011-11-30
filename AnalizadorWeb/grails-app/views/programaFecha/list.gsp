@@ -6,10 +6,12 @@
     <meta name="layout" content="main" />
   <g:set var="entityName" value="${message(code: 'programaFecha.label', default: 'ProgramaFecha')}" />
   <title><g:message code="default.list.label" args="[entityName]" /></title>
+  <export:resource />
 </head>
 <body>
   <div class="nav">
     <span class="menuButton"><g:link class="create" action="create"><g:message code="Nueva Estadística" args="[entityName]" /></g:link></span>
+    <export:formats formats="['excel','pdf']" />
   </div>
   <div class="body">
     <h1><g:message code="default.list.label" args="[entityName]" /></h1>
@@ -18,6 +20,7 @@
     </g:if>
     <div class="list">
       <table>
+
         <thead>
           <tr>
 
@@ -36,15 +39,15 @@
         <g:each in="${programaFechaInstanceList}" status="i" var="programaFechaInstance">
           <tr class="${(i % 2) == 0 ? 'odd' : 'even'}">
 
-          <td>${fieldValue(bean: programaFechaInstance, field: "cantidadDefectosBajo")}</td>
+            <td>${fieldValue(bean: programaFechaInstance, field: "cantidadDefectosBajo")}</td>
 
-          <td>${fieldValue(bean: programaFechaInstance, field: "cantidadDefectosMedio")}</td>
+            <td>${fieldValue(bean: programaFechaInstance, field: "cantidadDefectosMedio")}</td>
 
-          <td>${fieldValue(bean: programaFechaInstance, field: "cantidadDefectosCritico")}</td>
+            <td>${fieldValue(bean: programaFechaInstance, field: "cantidadDefectosCritico")}</td>
 
-          <td>${fieldValue(bean: programaFechaInstance, field: "fecha")}</td>
+            <td>${fieldValue(bean: programaFechaInstance, field: "fecha")}</td>
 
-          <td>${fieldValue(bean: programaFechaInstance, field: "programa")}</td>
+            <td>${fieldValue(bean: programaFechaInstance, field: "programa")}</td>
 
           </tr>
         </g:each>
