@@ -150,7 +150,7 @@ class ProgramaFechaController {
                                 def cantidadDefectoMedio=it.cantidadDefectosMedio.toString()
                                 def cantidadDefectoCritico=it.cantidadDefectosCritico.toString()
                                 def fechaXml =it.fecha.toString().substring(4)
-                                DateFormat dfm = new SimpleDateFormat("MMM dd HH:mm:ss z yyyy");
+                                DateFormat dfm = new SimpleDateFormat("MMM dd HH:mm:ss z yyyy",Locale.US);//Jan 09 17:58:00 CLST 2012
                                 dfm.setTimeZone(TimeZone.getTimeZone("Chile/EasterIsland"));
                                 Date par = dfm.parse(fechaXml);
                                 def fecha = new Fecha(fecha:par).save()
@@ -190,8 +190,9 @@ class ProgramaFechaController {
                 redirect(action: "create")
             } 
         }catch(Exception e){
-            flash.message = "Error al procesar el archivo seleccionado"
-            redirect(action: "create")
+            //flash.message = "Error al procesar el archivo seleccionado"
+            //redirect(action: "create")
+            e.printStackTrace()
         }
      
     }

@@ -10,7 +10,7 @@ class DefectoProgramas implements Serializable {
     static belongsTo=[Programa,Defecto]
     static mapping = {
         version false
-        id composite:['defecto','programa'], generator:'assigned'
+        id composite:['defecto','programa','numeroLinea'], generator:'assigned'
     }
     def String toString() {
         return numeroLinea+" "+programa.getNombre()+" "+defecto.getNombre()
